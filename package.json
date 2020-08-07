@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/mendoc/netlify-functions/issues"
   },
-  "homepage": "https://github.com/mendoc/netlify-functions#readme"
+  "homepage": "https://github.com/mendoc/netlify-functions#readme",
+  "dependencies": {
+    "firebase-admin": "^9.0.0"
+  }
 }
