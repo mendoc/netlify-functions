@@ -1,0 +1,25 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Test des fonctions Netlify",
+  "main": "index.js",
+  "scripts": {
+    "start": "node func/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mendoc/netlify-functions.git"
+  },
+  "keywords": [
+    "Netlify",
+    "functions",
+    "nodejs",
+    "firestore"
+  ],
+  "author": "Dimitri ONGOUA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mendoc/netlify-functions/issues"
+  },
+  "homepage": "https://github.com/mendoc/netlify-functions#readme"
+}
