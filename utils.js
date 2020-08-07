@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 
-const serviceAccount = require('./badol-65208-firebase-adminsdk-iztyi-47aad9a9a2.json');
+const serviceAccount = process.env.SERVICE_ACCOUNT;
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
