@@ -1,4 +1,4 @@
-const { one, e } = require('../utils');
+const { one, e } = require('./utils');
 
 console.log(one);
 
