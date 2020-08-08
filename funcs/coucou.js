@@ -27,6 +27,6 @@ exports.handler = async (event, context) => {
     return {
         statusCode: 200,
         headers: { "Content-Type": "application/json" },
-        body: comptes
+        body: { comptes }
     }
 }
