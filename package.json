@@ -4,7 +4,7 @@
   "description": "Test des fonctions Netlify",
   "main": "index.js",
   "scripts": {
-    "start": "node func/index.js"
+    "start": "node funcs/index.js"
   },
   "repository": {
     "type": "git",
