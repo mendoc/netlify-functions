@@ -21,8 +21,9 @@ const s = async (collection) => {
 }
 
 exports.handler = async (event, context) => {
+    // Récupération des comptes
     let comptes = s("comptes");
-    
+
     return {
         statusCode: 200,
         headers: { "Content-Type": "application/json" },
