@@ -21,7 +21,6 @@ const s = async (collection) => {
 }
 
 exports.handler = async (event, context) => {
-    // Récupération des comptes
     let comptes = s("comptes");
 
     return {
