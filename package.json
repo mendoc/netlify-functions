@@ -4,8 +4,8 @@
   "description": "Tests des fonctions Netlify",
   "main": "index.js",
   "scripts": {
-    "serve": "netlify-lambda serve src/funcs -c webpack.functions.js",
-    "build": "netlify-lambda build src/funcs -c webpack.functions.js"
+    "serve": "netlify-lambda serve funcs -c webpack.functions.js",
+    "build": "netlify-lambda build funcs -c webpack.functions.js"
   },
   "repository": {
     "type": "git",
