@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/mendoc/netlify-functions#readme",
   "dependencies": {
-    "firebase-admin": "^9.0.0"
+    "firebase-admin": "^9.0.0",
+    "nodemailer": "^6.4.11"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
