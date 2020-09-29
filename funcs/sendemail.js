@@ -17,15 +17,16 @@ var mailOptions = {
     text: 'Vous recevez ce message car vous avez signalé avoir oublié votre mot de passe. Suivez le lien ci-dessous pour définir un nouveau mot de passe. https://gombo.ga/#/password'
 };
 
-exports.handler = async (event, context, callback) => {
-    return transporter.sendMail(mailOptions, function (error, info) {
+exports.handler = (event, context, callback) => {
+    transporter.sendMail(mailOptions, function (error, info) {
         let message = "";
         if (error) {
-            message = error.response;
+            console.log(error);
+            message = "Erreur : " + error.response;
         } else {
+            console.log(info);
             message = 'Email envoyé: ' + info.response;
         }
-        console.log(message);
         callback(null, {
             statusCode: 200,
             body: message
