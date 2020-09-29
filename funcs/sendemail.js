@@ -25,6 +25,7 @@ exports.handler = async (event, context, callback) => {
         } else {
             message = 'Email envoyé: ' + info.response;
         }
+        console.log(message);
         callback(null, {
             statusCode: 200,
             body: message
