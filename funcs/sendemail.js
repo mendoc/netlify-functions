@@ -72,7 +72,8 @@ exports.handler = (event, context, callback) => {
     };
 
     one("utilisateurs", { email: adresse }).then(doc => {
-        if (doc.email) {
+        console.log(doc);
+        if (doc && doc.email) {
             db.collection('utilisateurs').doc(doc.id).update({ reset: token, tsReset: Date.now() }).then(ret => {
                 console.log("Pret pour la réinitialisaton du mot de passe");
                 console.log(ret);
@@ -105,7 +106,6 @@ exports.handler = (event, context, callback) => {
                 body: JSON.stringify({ message: "Compte introuvable" })
             });
         }
-        console.log(doc);
     }).catch(e => {
         console.error(e);
         callback(null, {
