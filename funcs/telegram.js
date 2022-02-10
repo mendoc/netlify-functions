@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
     const bot_message = event.queryStringParameters.message || "Message manquant"
     const bot_chatID  = event.queryStringParameters.chatid || process.env.CHAT_ID
-    const bot_num     = event.queryStringParameters.bot || 0
+    const bot_num     = parseInt(event.queryStringParameters.bot) || 0
     
     let bot_token  = ""
     
