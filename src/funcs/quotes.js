@@ -1,7 +1,9 @@
+require("dotenv").config();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-let botURL = "https://funcs-lab.netlify.app/.netlify/functions/telegram?bot=1&chatid=-514238358";
+let botURL =
+  "https://api.telegram.org/bot[BOT_TOKEN]/sendMessage?chat_id=[CHAT_ID]&parse_mode=Markdown&text=[MESSAGE]";
 const quotesURL =
   "https://guidefreelance.com/citation-dentrepreneur-ou-pour-entrepreneur";
 
@@ -19,17 +21,16 @@ exports.handler = async function (event, context) {
   const $ = cheerio.load(axiosResponse.data);
   const items = $("article ul li");
   const item = items.eq(Math.floor(Math.random() * items.length));
-  let quote = item.text();
-  const rawQuote = quote;
-  quote = quote.split(":").reverse().join("\n_").trim() + "_";
+  const rawQuote = item.text();
+  const quote = rawQuote.split(":").reverse().join("\n_").trim() + "_";
 
   // Send the quote to a Telegram bot
-  botURL = encodeURI(`${botURL}&message=${encodeURI(quote)}`);
-  axios
-    .get(botURL, {
-      method: "GET",
-    })
-    .catch((err) => console.error(err.message));
+  botURL = botURL
+    .replace("[BOT_TOKEN]", process.env.BOT_TOKEN)
+    .replace("[CHAT_ID]", process.env.CHAT_ID)
+    .replace("[MESSAGE]", encodeURI(quote));
+
+  axios.get(botURL).catch((err) => console.error(err.message));
 
   return {
     statusCode: 200,
