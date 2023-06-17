@@ -1,11 +1,11 @@
 {
   "name": "netlify-functions",
   "version": "1.0.0",
-  "description": "Tests des fonctions Netlify",
-  "main": "index.js",
+  "description": "Fonctions utilitaires hébergées sur Netlify",
   "scripts": {
-    "serve": "netlify-lambda serve funcs -c webpack.functions.js",
-    "build": "netlify-lambda build funcs -c webpack.functions.js"
+    "dev": "netlify dev",
+    "build": "netlify build",
+    "start": "netlify dev"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,13 @@
   "homepage": "https://github.com/mendoc/netlify-functions#readme",
   "dependencies": {
     "axios": "^0.23.0",
+    "cheerio": "^1.0.0-rc.12",
     "firebase-admin": "^9.0.0",
     "nodemailer": "^6.4.11",
+    "qs": "^6.11.2",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
-    "netlify-lambda": "^2.0.1",
-    "webpack-node-externals": "^2.5.1"
+    "dotenv": "^8.2.0"
   }
 }
